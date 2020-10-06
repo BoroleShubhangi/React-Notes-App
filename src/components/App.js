@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import CreateArea from "./CreayeArea";
-import Note from "./Note"
-
+import CreateArea from "./createNote";
+import DeleteNote from "./deleteNote"
 
 const App = (props) => {
- 
-
-  const [notes, setNotes] = useState([]);
+   const [notes, setNotes] = useState([]);
   function handleNoteAdd(note) {
     setNotes((prevNotes) => {
       return [...prevNotes, note];
@@ -28,7 +25,7 @@ const App = (props) => {
       <CreateArea onAdd={handleNoteAdd} />
       {notes.map((note, index) => {
         return (
-          <Note
+          <DeleteNote
             key={index}
             id={index}
             title={note.title}
